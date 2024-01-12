@@ -15,7 +15,7 @@ async function getMinMaxTemperatureCity(cities) {
   const cityTemps = await Promise.all(cities.map((city) => requestWeather(city)));
   const arrangedData = cityTemps
     .map(({ main: { temp }, name }) => ({ name, temp }))
-    .sort((city1, city2) => city1.temp > city2.temp);
+    .sort((city1, city2) => city2.temp - city1.temp);
 
   return { highest: arrangedData[0].name, lowest: arrangedData[len - 1].name };
 }
