@@ -31,11 +31,4 @@ const myfilter = function (pred, list) {
   return myreduce((total, item) => (pred(item) ? [...total, item] : total), [], list);
 };
 
-const result1 = myreduce((acc, elem) => acc + elem, 0, [1, 2]);
-console.log(result1);
-
-const result2 = mymap((item) => item * 2, [1, 2, 3]);
-console.log(result2);
-
-const result3 = myfilter((item) => item % 2 === 1, [1, 2, 3, 7, 0]);
-console.log(result3);
+module.exports = { myreduce, mymap, myfilter };

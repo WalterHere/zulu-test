@@ -1,4 +1,4 @@
-const fib = (max) => {
+const oddSumForFib = (max) => {
   // Initialize variables for the first two Fibonacci numbers
   let prev = 0,
     current = 1,
@@ -16,5 +16,4 @@ const fib = (max) => {
   return sum;
 };
 
-console.log(fib(10));
-console.log(fib(100));
+module.exports = { oddSumForFib };
